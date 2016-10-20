@@ -26,7 +26,7 @@ or
 
 It will be rendered as:
 
-![block example](docs/images/example-01.png)
+![block example](https://github.com/inkdropapp/inkdrop-markdown-math/raw/master/docs/images/example-01.png)
 
 Inline example:
 
@@ -34,4 +34,4 @@ Inline example:
 
 It will produce:
 
-![inline example](docs/images/example-02.png)
+![inline example](https://github.com/inkdropapp/inkdrop-markdown-math/raw/master/docs/images/example-02.png)
