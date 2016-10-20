@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [],
-  "repository": "https://github.com/inkdropapp/markdown-math",
+  "repository": "https://github.com/inkdropapp/inkdrop-markdown-math",
   "license": "MIT",
   "engines": {
     "inkdrop": "^2.1.0"
