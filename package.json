@@ -2,7 +2,7 @@
   "name": "markdown-math",
   "main": "./lib/markdown-math",
   "version": "0.1.1",
-  "description": "A short description of your package",
+  "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
   "repository": "https://github.com/inkdropapp/inkdrop-markdown-math",
   "license": "MIT",
