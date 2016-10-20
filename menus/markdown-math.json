@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    ".CodeMirror": [
+      {
+        "label": "Toggle markdown-math",
+        "command": "markdown-math:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Plugins",
+      "submenu": [
+        {
+          "label": "markdown-math",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "markdown-math:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "markdown-math",
+  "main": "./lib/markdown-math",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/inkdropapp/markdown-math",
+  "license": "MIT",
+  "engines": {
+    "inkdrop": "^2.1.0"
+  },
+  "dependencies": {
+    "katex": "^0.6.0",
+    "react-katex": "github:noradaiko/react-katex",
+    "trim-trailing-lines": "^1.0.0"
+  },
+  "styleSheets": [
+    "markdown-math.less"
+  ],
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "$",
+      "inkdrop"
+    ]
+  }
+}
