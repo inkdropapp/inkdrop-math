@@ -1,13 +1,13 @@
 {
   "name": "math",
   "main": "./lib/index",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
   "repository": "https://github.com/inkdropapp/inkdrop-math",
   "license": "MIT",
   "engines": {
-    "inkdrop": "^3.1.1"
+    "inkdrop": "^3.4.0"
   },
   "dependencies": {
     "katex": "^0.6.0",
