@@ -1,7 +1,7 @@
 {
   "name": "math",
   "main": "./lib/index",
-  "version": "0.3.0",
+  "version": "0.2.0",
   "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
   "repository": "https://github.com/inkdropapp/inkdrop-math",
