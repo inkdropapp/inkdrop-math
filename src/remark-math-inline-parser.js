@@ -1,12 +1,10 @@
-'use strict';
-
-function locator(value, fromIndex) {
+function locator (value, fromIndex) {
 	return value.indexOf('$', fromIndex);
 }
 
 const RE_MATH = /^\$((?:\\\$|[^$])+)\$/;
 
-function tokenizer(eat, value, silent) {
+function tokenizer (eat, value, silent) {
 	const match = RE_MATH.exec(value);
 
 	if (match) {
@@ -16,12 +14,12 @@ function tokenizer(eat, value, silent) {
 
 		return eat(match[0])({
 			type: 'inlineCode',
-			value: match[1].trim(),
-			data: {
-				hProperties: {
-					lang: 'inline_math'
-				}
-			}
+      value: match[1].trim(),
+      data: {
+        hProperties: {
+          lang: 'inline_math'
+        }
+      }
 		});
 	}
 }
