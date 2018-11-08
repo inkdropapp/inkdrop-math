@@ -12,7 +12,13 @@ class Math extends React.Component {
     const equation = this.props.children[0]
     if (equation) {
       try {
-        return <Component math={equation} />
+        return <Component math={equation} renderError={error => {
+          return (
+            <span className="ui error message mde-error-message">
+              {error.message}
+            </span>
+          )
+        }} />
       } catch (e) {
         return <span>{e.message}</span>
       }

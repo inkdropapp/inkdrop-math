@@ -17,8 +17,7 @@
     "inkdrop": "^3.4.0"
   },
   "dependencies": {
-    "katex": "^0.6.0",
-    "react-katex": "github:craftzdog/react-katex",
+    "react-katex": "^2.0.2",
     "trim-trailing-lines": "^1.0.0"
   },
   "devDependencies": {
