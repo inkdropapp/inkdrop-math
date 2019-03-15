@@ -1,24 +1,36 @@
 'use babel'
-
+import PropTypes from 'prop-types'
 import math from './remark-math'
-import { React } from 'inkdrop'
+import * as React from 'react'
+import { markdownRenderer } from 'inkdrop'
+import CodeMirror from 'codemirror'
 
 const { BlockMath, InlineMath } = require('react-katex')
 
 class Math extends React.Component {
-  render () {
+  static propTypes = {
+    lang: PropTypes.string.isRequired,
+    children: PropTypes.arrayOf(PropTypes.string)
+  }
+
+  render() {
     const lang = this.props.lang
     const Component = lang === 'math' ? BlockMath : InlineMath
     const equation = this.props.children[0]
     if (equation) {
       try {
-        return <Component math={equation} renderError={error => {
-          return (
-            <span className="ui error message mde-error-message">
-              {error.message}
-            </span>
-          )
-        }} />
+        return (
+          <Component
+            math={equation}
+            renderError={error => {
+              return (
+                <span className="ui error message mde-error-message">
+                  {error.message}
+                </span>
+              )
+            }}
+          />
+        )
       } catch (e) {
         return <span>{e.message}</span>
       }
@@ -29,15 +41,14 @@ class Math extends React.Component {
 }
 
 module.exports = {
-  activate () {
-    const { MDEPreview } = inkdrop.components.classes
-    if (MDEPreview) {
-      MDEPreview.remarkPlugins.push(math)
-      MDEPreview.remarkCodeComponents.math = Math
-      MDEPreview.remarkCodeComponents.inline_math = Math
+  activate() {
+    if (markdownRenderer) {
+      markdownRenderer.remarkPlugins.push(math)
+      markdownRenderer.remarkCodeComponents.math = Math
+      markdownRenderer.remarkCodeComponents.inline_math = Math
     }
-    if (inkdrop.CodeMirror) {
-      inkdrop.CodeMirror.modeInfo.push({
+    if (CodeMirror) {
+      CodeMirror.modeInfo.push({
         name: 'math',
         mime: 'text/x-latex',
         mode: 'stex',
@@ -47,7 +58,5 @@ module.exports = {
     }
   },
 
-  deactivate () {
-  }
-
+  deactivate() {}
 }
