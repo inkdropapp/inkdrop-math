@@ -40,7 +40,7 @@ It will produce:
 ## Changelog
 
 - 1.1.0
-  - feat(katex): update react-katex
+  - feat(katex): update react-katex (Thanks [@tonyonodi](https://github.com/tonyonodi))
   - fix(fonts): Update font face
 - 1.0.0
   - Support Inkdrop 4.x
