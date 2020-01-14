@@ -5,7 +5,7 @@ import * as React from 'react'
 import { markdownRenderer } from 'inkdrop'
 import CodeMirror from 'codemirror'
 
-const { BlockMath, InlineMath } = require('react-katex')
+const TeX = require('@matejmazur/react-katex')
 
 class Math extends React.Component {
   static propTypes = {
@@ -15,12 +15,12 @@ class Math extends React.Component {
 
   render() {
     const lang = this.props.lang
-    const Component = lang === 'math' ? BlockMath : InlineMath
     const equation = this.props.children[0]
     if (equation) {
       try {
         return (
-          <Component
+          <TeX
+            block={lang === 'math'}
             math={equation}
             renderError={error => {
               return (
