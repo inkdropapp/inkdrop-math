@@ -4,7 +4,6 @@ import { markdownRenderer } from 'inkdrop'
 import CodeMirror from 'codemirror'
 import ReactMath from './react-math'
 
-const TeX = require('@matejmazur/react-katex')
 const MATH_MODE_INFO = {
   name: 'math',
   mime: 'text/x-latex',
