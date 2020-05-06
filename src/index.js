@@ -29,8 +29,10 @@ module.exports = {
       const { remarkPlugins, remarkCodeComponents } = markdownRenderer
       const i = remarkPlugins.indexOf(math)
       if (i >= 0) remarkPlugins.splice(i, 1)
-      if (remarkCodeComponents.math === ReactMath) delete remarkCodeComponents.math
-      if (remarkCodeComponents.inline_math === ReactMath) delete remarkCodeComponents.inline_math
+      if (remarkCodeComponents.math === ReactMath)
+        delete remarkCodeComponents.math
+      if (remarkCodeComponents.inline_math === ReactMath)
+        delete remarkCodeComponents.inline_math
     }
     if (CodeMirror) {
       const { modeInfo } = CodeMirror

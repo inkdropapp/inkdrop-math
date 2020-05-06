@@ -18,7 +18,7 @@ export default class Math extends React.Component {
           <TeX
             block={lang === 'math'}
             math={equation}
-            renderError={error => {
+            renderError={(error) => {
               return (
                 <span className="ui error message mde-error-message">
                   {error.message}

@@ -1,4 +1,4 @@
-module.exports = function(processor) {
+module.exports = function (processor) {
   const Parser = this.Parser
   const inlineTokenizers = Parser.prototype.inlineTokenizers
   const inlineMethods = Parser.prototype.inlineMethods
