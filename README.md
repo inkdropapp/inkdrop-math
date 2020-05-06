@@ -39,6 +39,8 @@ It will produce:
 
 ## Changelog
 
+- 1.1.1
+  - fix(plugin): unload components and mode for math on deactivation
 - 1.1.0
   - feat(katex): update react-katex (Thanks [@tonyonodi](https://github.com/tonyonodi))
   - fix(fonts): Update font face
