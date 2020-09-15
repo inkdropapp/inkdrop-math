@@ -39,6 +39,8 @@ It will produce:
 
 ## Changelog
 
+- 1.1.2
+  - fix(dep): use @matejmazur/react-kate@3.0.2 (Thanks [Matěj](https://forum.inkdrop.app/t/inline-math-doesnt-export-with-pdf-on-linux/2074))
 - 1.1.1
   - fix(plugin): unload components and mode for math on deactivation
 - 1.1.0
