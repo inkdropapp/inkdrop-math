@@ -27,4 +27,4 @@ function tokenizer(eat, value, silent) {
 tokenizer.locator = locator
 tokenizer.notInLink = true
 
-module.exports = tokenizer
+export default tokenizer

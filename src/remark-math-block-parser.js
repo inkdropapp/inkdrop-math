@@ -5,14 +5,13 @@
  * @module remark:parse:tokenize:code-fenced
  * @fileoverview Tokenise fenced code.
  */
-
 'use strict'
 
 /* Dependencies. */
 var trim = require('trim-trailing-lines')
 
 /* Expose. */
-module.exports = fencedCode
+export default fencedCode
 
 /* Characters */
 var C_NEWLINE = '\n'
