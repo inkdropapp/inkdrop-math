@@ -4,7 +4,10 @@
   "version": "1.2.0",
   "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
-  "repository": "https://github.com/inkdropapp/inkdrop-math",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inkdropapp/inkdrop-math.git"
+  },
   "license": "MIT",
   "styleSheets": [
     "markdown-math.less"
