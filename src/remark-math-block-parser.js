@@ -22,7 +22,7 @@ var C_TICK = '$'
 
 /* Constants */
 var MIN_FENCE_COUNT = 2
-var CODE_INDENT_COUNT = 4
+//var CODE_INDENT_COUNT = 4
 
 /**
  * Tokenise fenced code.
