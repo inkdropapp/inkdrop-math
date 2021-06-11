@@ -39,6 +39,9 @@ It will produce:
 
 ## Changelog
 
+- 1.2.0
+  - feat(katex): bump up to 0.13.11
+  - Note: Check out [the breaking changes in Katex and migration guide](https://github.com/KaTeX/KaTeX/issues/2490)
 - 1.1.2
   - fix(dep): use @matejmazur/react-kate@3.0.2 (Thanks [Matěj](https://forum.inkdrop.app/t/inline-math-doesnt-export-with-pdf-on-linux/2074))
 - 1.1.1
