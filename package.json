@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@matejmazur/react-katex": "^3.1.3",
-    "katex": "^0.13.11",
+    "katex": "^0.13.13",
     "trim-trailing-lines": "^1.1.4"
   },
   "devDependencies": {
