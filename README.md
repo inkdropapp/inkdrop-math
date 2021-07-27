@@ -37,8 +37,37 @@ It will produce:
 
 ![inline example](https://github.com/inkdropapp/inkdrop-math/raw/master/docs/images/example-02.png)
 
+### Equation numbers
+
+You can use `{equation}` to have automatic equation numbers. For example:
+
+    ```math
+    \begin{equation}
+    2(x+5)-7 = 3(x-2)
+    \end{equation}
+    ```
+
+    ```math
+    \begin{equation}
+    2x+10-7 = 3x-6
+    \end{equation}
+    ```
+
+    ```math
+    \begin{equation}
+    9 = x
+    \end{equation}
+    ```
+
+It will produce:
+
+![equation numbers example](https://github.com/inkdropapp/inkdrop-math/raw/master/docs/images/example-03.png)
+
 ## Changelog
 
+- 1.2.1
+  - feat(katex): bump up to 0.13.13
+  - fix(style): update CSS to the latest (Thanks [Erning](https://github.com/inkdropapp/inkdrop-math/issues/11))
 - 1.2.0
   - feat(katex): bump up to 0.13.11
   - Note: Check out [the breaking changes in Katex and migration guide](https://github.com/KaTeX/KaTeX/issues/2490)
