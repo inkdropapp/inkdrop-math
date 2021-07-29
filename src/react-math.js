@@ -1,7 +1,7 @@
 'use babel'
 import * as React from 'react'
 import PropTypes from 'prop-types'
-const TeX = require('@matejmazur/react-katex')
+import TeX from '@matejmazur/react-katex'
 
 export default class Math extends React.Component {
   static propTypes = {
