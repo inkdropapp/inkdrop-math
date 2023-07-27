@@ -1,11 +1,16 @@
 root: true
-plugins:
-  - react
 extends:
-  - plugin:react/recommended
   - prettier
-parser: '@babel/eslint-parser'
-env: {}
+  - plugin:react/recommended
+parserOptions:
+  sourceType: 'module'
+  ecmaVersion: 2020
+env:
+  browser: true
+  es6: true
+  node: true
+globals:
+  inkdrop: true
 rules:
   no-useless-escape: 0
   prefer-const: 2
@@ -13,4 +18,3 @@ rules:
     - 2
     - argsIgnorePattern: ^_
       varsIgnorePattern: ^_
-  react/prop-types: 0

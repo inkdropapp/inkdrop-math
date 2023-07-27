@@ -1,7 +1,7 @@
-import math from './remark-math'
-import { markdownRenderer } from 'inkdrop'
-import CodeMirror from 'codemirror'
-import ReactMath from './react-math'
+import { markdownRenderer, CodeMirror } from 'inkdrop'
+import { lazy } from 'react'
+import remarkMath from 'remark-math'
+import { remarkMath2Code } from './remark-math-to-code'
 
 const MATH_MODE_INFO = {
   name: 'math',
@@ -11,10 +11,13 @@ const MATH_MODE_INFO = {
   alias: ['inline_math']
 }
 
+const ReactMath = lazy(() => import('./react-math'))
+
 module.exports = {
   activate() {
     if (markdownRenderer) {
-      markdownRenderer.remarkPlugins.push(math)
+      markdownRenderer.remarkPlugins.push(remarkMath)
+      markdownRenderer.remarkPlugins.push(remarkMath2Code)
       markdownRenderer.remarkCodeComponents.math = ReactMath
       markdownRenderer.remarkCodeComponents.inline_math = ReactMath
     }
@@ -25,13 +28,14 @@ module.exports = {
 
   deactivate() {
     if (markdownRenderer) {
-      const { remarkPlugins, remarkCodeComponents } = markdownRenderer
-      const i = remarkPlugins.indexOf(math)
-      if (i >= 0) remarkPlugins.splice(i, 1)
-      if (remarkCodeComponents.math === ReactMath)
-        delete remarkCodeComponents.math
-      if (remarkCodeComponents.inline_math === ReactMath)
-        delete remarkCodeComponents.inline_math
+      markdownRenderer.remarkPlugins = markdownRenderer.remarkPlugins.filter(
+        plugin => remarkMath !== plugin
+      )
+      markdownRenderer.remarkPlugins = markdownRenderer.remarkPlugins.filter(
+        plugin => ![remarkMath, remarkMath2Code].includes(plugin)
+      )
+      markdownRenderer.remarkCodeComponents.math = null
+      markdownRenderer.remarkCodeComponents.inline_math = null
     }
     if (CodeMirror) {
       const { modeInfo } = CodeMirror
