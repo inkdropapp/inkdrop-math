@@ -1,7 +1,7 @@
-import math from './remark-math'
-import { markdownRenderer } from 'inkdrop'
-import CodeMirror from 'codemirror'
-import ReactMath from './react-math'
+import { markdownRenderer, CodeMirror } from 'inkdrop'
+import remarkMath from 'remark-math'
+import rehypeCode2Math from './rehype-katex'
+import rehypeKatex from 'rehype-katex'
 
 const MATH_MODE_INFO = {
   name: 'math',
@@ -14,9 +14,9 @@ const MATH_MODE_INFO = {
 module.exports = {
   activate() {
     if (markdownRenderer) {
-      markdownRenderer.remarkPlugins.push(math)
-      markdownRenderer.remarkCodeComponents.math = ReactMath
-      markdownRenderer.remarkCodeComponents.inline_math = ReactMath
+      markdownRenderer.remarkPlugins.push(remarkMath)
+      markdownRenderer.rehypePlugins.push(rehypeCode2Math)
+      markdownRenderer.rehypePlugins.push(rehypeKatex)
     }
     if (CodeMirror) {
       CodeMirror.modeInfo.push(MATH_MODE_INFO)
@@ -25,13 +25,12 @@ module.exports = {
 
   deactivate() {
     if (markdownRenderer) {
-      const { remarkPlugins, remarkCodeComponents } = markdownRenderer
-      const i = remarkPlugins.indexOf(math)
-      if (i >= 0) remarkPlugins.splice(i, 1)
-      if (remarkCodeComponents.math === ReactMath)
-        delete remarkCodeComponents.math
-      if (remarkCodeComponents.inline_math === ReactMath)
-        delete remarkCodeComponents.inline_math
+      markdownRenderer.remarkPlugins = markdownRenderer.remarkPlugins.filter(
+        plugin => remarkMath !== plugin
+      )
+      markdownRenderer.rehypePlugins = markdownRenderer.rehypePlugins.filter(
+        plugin => ![rehypeCode2Math, rehypeKatex].includes(plugin)
+      )
     }
     if (CodeMirror) {
       const { modeInfo } = CodeMirror
