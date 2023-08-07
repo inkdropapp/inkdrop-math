@@ -7,6 +7,9 @@ export const remarkMath2Code = () => {
       element.lang = 'math'
       element.data.hChildren = undefined
       element.data.hName = undefined
+      element.data.hProperties = {
+        lang: 'math'
+      }
     })
     visit(tree, { type: 'inlineMath' }, element => {
       element.type = 'inlineCode'
