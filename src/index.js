@@ -3,6 +3,8 @@ import { lazy } from 'react'
 import remarkMath from 'remark-math'
 import { remarkMath2Code } from './remark-math-to-code'
 
+console.log('module.paths:', module.paths)
+
 const MATH_MODE_INFO = {
   name: 'math',
   mime: 'text/x-latex',
