@@ -11,6 +11,9 @@ env:
   node: true
 globals:
   inkdrop: true
+settings:
+  react:
+    version: 18.2.0
 rules:
   no-useless-escape: 0
   prefer-const: 2
@@ -18,3 +21,4 @@ rules:
     - 2
     - argsIgnorePattern: ^_
       varsIgnorePattern: ^_
+  react/prop-types: 0
