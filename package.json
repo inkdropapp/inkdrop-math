@@ -1,7 +1,7 @@
 {
   "name": "math",
   "main": "./lib/index",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
   "repository": {
