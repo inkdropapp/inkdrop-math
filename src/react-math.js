@@ -2,13 +2,13 @@ import React from 'react'
 import TeX from '@matejmazur/react-katex'
 
 const Math = props => {
-  const lang = props.lang
+  const inline = props.className.includes('inline')
   const equation = props.children[0]
   if (equation) {
     try {
       return (
         <TeX
-          block={lang === 'math'}
+          block={!inline}
           math={equation}
           renderError={error => {
             return (
