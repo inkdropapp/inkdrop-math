@@ -65,6 +65,14 @@ It will produce:
 
 ## Changelog
 
+- 1.5.1
+  - Reverted to v1.4.0 because of the incompatibility with the current stable version (v5.8.1)
+- 1.5.0
+  - Use the bundled math block parser
+- 1.4.0
+  - Bump up Unified to 11
+- 1.3.0
+  - Support the new markdown renderer of Inkdrop v5.6.0
 - 1.2.1
   - feat(katex): bump up to 0.13.13
   - fix(style): update CSS to the latest (Thanks [Erning](https://github.com/inkdropapp/inkdrop-math/issues/11))
