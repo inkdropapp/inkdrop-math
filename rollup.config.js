@@ -17,6 +17,7 @@ export default [
     plugins: [
       nodeResolve(),
       babel({
+        babelHelpers: 'bundled',
         presets: ['@babel/preset-react']
       })
     ]

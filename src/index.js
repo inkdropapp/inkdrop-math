@@ -1,7 +1,5 @@
 import { markdownRenderer, CodeMirror } from 'inkdrop'
 import { lazy } from 'react'
-import remarkMath from 'remark-math'
-import { remarkMath2Code } from './remark-math-to-code'
 
 console.log('module.paths:', module.paths)
 
@@ -18,8 +16,6 @@ const ReactMath = lazy(() => import('./react-math'))
 module.exports = {
   activate() {
     if (markdownRenderer) {
-      markdownRenderer.remarkPlugins.push(remarkMath)
-      markdownRenderer.remarkPlugins.push(remarkMath2Code)
       markdownRenderer.remarkCodeComponents.math = ReactMath
       markdownRenderer.remarkCodeComponents.inline_math = ReactMath
     }
@@ -32,9 +28,6 @@ module.exports = {
     if (markdownRenderer) {
       markdownRenderer.remarkPlugins = markdownRenderer.remarkPlugins.filter(
         plugin => remarkMath !== plugin
-      )
-      markdownRenderer.remarkPlugins = markdownRenderer.remarkPlugins.filter(
-        plugin => ![remarkMath, remarkMath2Code].includes(plugin)
       )
       markdownRenderer.remarkCodeComponents.math = null
       markdownRenderer.remarkCodeComponents.inline_math = null
