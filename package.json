@@ -18,7 +18,7 @@
     "lint": "eslint ."
   },
   "engines": {
-    "inkdrop": ">=5.8.0 <7.0.0"
+    "inkdrop": ">=5.9.0 <7.0.0"
   },
   "dependencies": {
     "@matejmazur/react-katex": "^3.1.3",
