@@ -65,6 +65,8 @@ It will produce:
 
 ## Changelog
 
+- 1.6.0
+  - Target Inkdrop >= 5.9.0
 - 1.5.0
   - Use the bundled math block parser
 - 1.4.0
