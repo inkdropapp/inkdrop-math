@@ -1,8 +1,6 @@
 import { markdownRenderer, CodeMirror } from 'inkdrop'
 import { lazy } from 'react'
 
-console.log('module.paths:', module.paths)
-
 const MATH_MODE_INFO = {
   name: 'math',
   mime: 'text/x-latex',
