@@ -1,13 +1,17 @@
-@import "fonts.less";
+@import 'fonts.less';
 
 // The mu unit is defined as 1/18 em
 @mu: (1em / 18);
 
 // The version is dynamically set from package.json via webpack.common.js
-@version: "";
+@version: '';
 
 .katex {
-  font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+  position: relative;
+  font:
+    normal 1.21em KaTeX_Main,
+    Times New Roman,
+    serif;
   line-height: 1.2;
 
   // Protect elements inside .katex from inheriting text-indent.
@@ -342,8 +346,8 @@
 
     .generate-size-change(@from, @to) {
       &.reset-size@{from}.size@{to} {
-        @sizeFromVariable: ~"size@{from}";
-        @sizeToVariable: ~"size@{to}";
+        @sizeFromVariable: ~'size@{from}';
+        @sizeToVariable: ~'size@{to}';
 
         font-size: (@@sizeToVariable / @@sizeFromVariable) * 1em;
       }
@@ -513,7 +517,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
     }
   }
 
@@ -612,12 +616,12 @@
 
   .eqn-num::before {
     counter-increment: katexEqnNo;
-    content: "(" counter(katexEqnNo) ")";
+    content: '(' counter(katexEqnNo) ')';
   }
 
   .mml-eqn-num::before {
     counter-increment: mmlEqnNo;
-    content: "(" counter(mmlEqnNo) ")";
+    content: '(' counter(mmlEqnNo) ')';
   }
 
   .mtr-glue {
@@ -680,6 +684,6 @@
 
 // Automatic equation numbers for some environments.
 // Use parallel counters for HTML and MathML.
-body {
+.mde-preview {
   counter-reset: katexEqnNo mmlEqnNo;
 }
