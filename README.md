@@ -65,6 +65,8 @@ It will produce:
 
 ## Changelog
 
+- 1.6.1
+  - fix(css): `.katex-html` causes the app container to unexpectedly scroll when clicking an anchor link (Thanks [Emily](https://forum.inkdrop.app/t/weird-ui-after-clicking-markdown-in-doc-links-math-plugin-bug/5177/6))
 - 1.6.0
   - Target Inkdrop >= 5.9.0
 - 1.5.0
