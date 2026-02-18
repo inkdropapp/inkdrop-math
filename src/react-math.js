@@ -1,7 +1,7 @@
 import React from 'react'
 import TeX from '@matejmazur/react-katex'
 
-const Math = props => {
+const Math = React.memo(function Math(props) {
   const inline = (props.className || '').includes('inline')
   const equation = props.children?.[0]
   if (equation) {
@@ -22,6 +22,6 @@ const Math = props => {
       Invalid math block
     </span>
   )
-}
+})
 
 export default Math
