@@ -18,7 +18,9 @@ module.exports = {
       markdownRenderer.remarkCodeComponents.inline_math = ReactMath
     }
     if (CodeMirror) {
-      CodeMirror.modeInfo.push(MATH_MODE_INFO)
+      if (!CodeMirror.modeInfo.some(m => m.name === 'math')) {
+        CodeMirror.modeInfo.push(MATH_MODE_INFO)
+      }
     }
   },
 
@@ -29,7 +31,7 @@ module.exports = {
     }
     if (CodeMirror) {
       const { modeInfo } = CodeMirror
-      const i = modeInfo.indexOf(MATH_MODE_INFO)
+      const i = modeInfo.findIndex(m => m.name === 'math')
       if (i >= 0) modeInfo.splice(i, 1)
     }
   }
