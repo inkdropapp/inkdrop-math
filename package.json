@@ -13,7 +13,7 @@
     "markdown-math.less"
   ],
   "scripts": {
-    "build": "rm -r lib && rollup -c --bundleConfigAsCjs",
+    "build": "rm -rf lib && rollup -c --bundleConfigAsCjs",
     "watch": "rollup -c --watch --bundleConfigAsCjs",
     "lint": "eslint ."
   },
