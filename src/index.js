@@ -24,9 +24,6 @@ module.exports = {
 
   deactivate() {
     if (markdownRenderer) {
-      markdownRenderer.remarkPlugins = markdownRenderer.remarkPlugins.filter(
-        plugin => remarkMath !== plugin
-      )
       markdownRenderer.remarkCodeComponents.math = null
       markdownRenderer.remarkCodeComponents.inline_math = null
     }
