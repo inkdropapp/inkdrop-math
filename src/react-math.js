@@ -5,26 +5,23 @@ const Math = props => {
   const inline = (props.className || '').includes('inline')
   const equation = props.children?.[0]
   if (equation) {
-    try {
-      return (
-        <TeX
-          block={!inline}
-          math={equation}
-          renderError={error => {
-            return (
-              <span className="ui error message mde-error-message">
-                {error.message}
-              </span>
-            )
-          }}
-        />
-      )
-    } catch (e) {
-      return <span>{e.message}</span>
-    }
-  } else {
-    return <span>Invalid math block</span>
+    return (
+      <TeX
+        block={!inline}
+        math={equation}
+        renderError={error => (
+          <span className="ui error message mde-error-message">
+            {error.message}
+          </span>
+        )}
+      />
+    )
   }
+  return (
+    <span className="ui error message mde-error-message">
+      Invalid math block
+    </span>
+  )
 }
 
 export default Math
