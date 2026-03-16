@@ -10,11 +10,12 @@
   },
   "license": "MIT",
   "styleSheets": [
-    "markdown-math.less"
+    "katex.css"
   ],
   "scripts": {
     "build": "rm -rf lib && rollup -c --bundleConfigAsCjs",
     "watch": "rollup -c --watch --bundleConfigAsCjs",
+    "generate-css": "node scripts/generate-katex-css.js",
     "lint": "eslint ."
   },
   "engines": {
