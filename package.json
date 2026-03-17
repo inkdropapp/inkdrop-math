@@ -4,10 +4,7 @@
   "version": "1.7.0",
   "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:inkdropapp/inkdrop-math.git"
-  },
+  "repository": "https://github.com/inkdropapp/inkdrop-math",
   "license": "MIT",
   "styleSheets": [
     "katex.css"
