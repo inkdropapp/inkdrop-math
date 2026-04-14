@@ -65,6 +65,8 @@ It will produce:
 
 ## Changelog
 
+- 1.7.1
+  - bump up KaTeX to 0.16.45
 - 1.7.0
   - migrate stylesheets from LESS to CSS
   - Bump up KaTeX to 0.16.38
