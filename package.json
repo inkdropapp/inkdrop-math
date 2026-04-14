@@ -3,6 +3,7 @@
   "main": "./lib/index",
   "version": "1.7.1",
   "description": "Add math syntax support to the editor and the preview",
+  "builtin": true,
   "keywords": [],
   "repository": "https://github.com/inkdropapp/inkdrop-math",
   "license": "MIT",
