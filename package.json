@@ -11,10 +11,11 @@
     "katex.css"
   ],
   "scripts": {
-    "build": "rm -rf lib && rollup -c --bundleConfigAsCjs",
-    "watch": "rollup -c --watch --bundleConfigAsCjs",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
     "generate-css": "node scripts/generate-katex-css.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "engines": {
     "inkdrop": "^6.0.0"
@@ -24,17 +25,17 @@
     "katex": "0.16.45"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-react": "^7.28.5",
-    "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
-    "@rollup/plugin-babel": "^7.0.0",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "eslint": "^10.2.0",
+    "@inkdropapp/types": "^0.0.7",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
-    "globals": "^17.5.0",
-    "prettier": "^3.8.2",
-    "rollup": "^4.60.1"
+    "prettier": "3.8.3",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.4"
   }
 }

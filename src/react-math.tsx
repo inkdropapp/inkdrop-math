@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import TeX from '@matejmazur/react-katex'
+import type { CodeComponentProps } from '@inkdropapp/types'
 
-const Math = React.memo(function Math(props) {
-  const inline = (props.className || '').includes('inline')
-  const equation = props.children?.[0]
+const Math: React.FC<CodeComponentProps> = ({ className, children }) => {
+  const inline = (className || '').includes('inline')
+  const equation = children?.[0]
   if (equation) {
     return (
       <TeX
@@ -22,6 +23,8 @@ const Math = React.memo(function Math(props) {
       Invalid math block
     </span>
   )
-})
+}
 
-export default Math
+Math.displayName = 'Math'
+
+export default memo(Math)
