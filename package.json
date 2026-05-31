@@ -18,7 +18,7 @@
     "format": "prettier --write ."
   },
   "engines": {
-    "inkdrop": "^6.0.0"
+    "inkdrop": ">=5.6.0 <7.0.0"
   },
   "dependencies": {
     "@matejmazur/react-katex": "^3.1.3",
