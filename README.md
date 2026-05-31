@@ -65,6 +65,9 @@ It will produce:
 
 ## Changelog
 
+- 1.7.2
+  - bump up KaTeX to 0.17.0
+  - migrate the plugin to TypeScript
 - 1.7.1
   - bump up KaTeX to 0.16.45
 - 1.7.0
