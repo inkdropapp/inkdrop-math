@@ -12,7 +12,8 @@
     "generate-css": "node scripts/generate-katex-css.js",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "prepublishOnly": "node --run typecheck && node --run lint && node --run generate-css && node --run build"
   },
   "dependencies": {
     "@matejmazur/react-katex": "^3.1.3",
