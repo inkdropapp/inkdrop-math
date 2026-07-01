@@ -8,6 +8,7 @@ const Math: React.FC<CodeComponentProps> = ({ className, children }) => {
   if (equation) {
     return (
       <TeX
+        className="inkdrop-math"
         block={!inline}
         math={equation}
         renderError={error => (
