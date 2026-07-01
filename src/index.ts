@@ -1,5 +1,5 @@
-import { lazy } from 'react'
 import type { Environment, IInkdropPlugin } from '@inkdropapp/types'
+import { lazy } from 'react'
 
 const ReactMath = lazy(() => import('./react-math'))
 

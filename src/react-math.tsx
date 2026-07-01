@@ -1,6 +1,6 @@
-import React, { memo } from 'react'
-import TeX from '@matejmazur/react-katex'
 import type { CodeComponentProps } from '@inkdropapp/types'
+import TeX from '@matejmazur/react-katex'
+import React, { memo } from 'react'
 
 const Math: React.FC<CodeComponentProps> = ({ className, children }) => {
   const inline = (className || '').includes('inline')
@@ -11,18 +11,12 @@ const Math: React.FC<CodeComponentProps> = ({ className, children }) => {
         block={!inline}
         math={equation}
         renderError={error => (
-          <span className="ui error message mde-error-message">
-            {error.message}
-          </span>
+          <span className="ui error message mde-error-message">{error.message}</span>
         )}
       />
     )
   }
-  return (
-    <span className="ui error message mde-error-message">
-      Invalid math block
-    </span>
-  )
+  return <span className="ui error message mde-error-message">Invalid math block</span>
 }
 
 Math.displayName = 'Math'
