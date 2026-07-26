@@ -1,2 +1,4 @@
+packages:
+  - 'packages/*'
 minimumReleaseAgeExclude:
-  - '@inkdropapp/types@0.0.7'
+  - '@inkdropapp/*'

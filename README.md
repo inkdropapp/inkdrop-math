@@ -1,68 +1,86 @@
-# math
+# Math for Inkdrop
 
-It adds math syntax support to markdown editor and preview.
-It uses [KaTeX](https://katex.org/) to render math typesetting.
+Write equations in LaTeX and have them typeset with [KaTeX](https://katex.org/).
 
-## Install
+![Block example](docs/images/example-01.png)
 
-```
+This repository holds two things: the Inkdrop plugin, and the host-agnostic rendering
+package it is built on.
+
+| Package                              | Published as                                        | What it is                                                                                                 |
+| ------------------------------------ | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [`packages/plugin`](packages/plugin) | `math` (ipm)                                        | The Inkdrop plugin — registers the `math` / `inline_math` code components and ships the Inkdrop stylesheet |
+| [`packages/math`](packages/math)     | [`@inkdropapp/math`](packages/math/README.md) (npm) | The renderer — a React component plus the scoped KaTeX stylesheet, importing no Inkdrop API                |
+
+The split exists because the renderer is useful outside the desktop app — the website demo
+uses it too. Everything host-specific arrives as a prop, so one implementation serves both.
+
+## Using the plugin
+
+```shell
 ipm install math
 ```
 
-## Usage
+See [the plugin README](packages/plugin/README.md) for the syntax it supports, or
+[the Inkdrop docs](https://docs.inkdrop.app/manual/extend-inkdrop-with-plugins) for how
+plugins are installed.
 
-### LaTeX syntax
+## Using the renderer elsewhere
 
-You can write equations in LaTeX syntax like this:
+```shell
+npm install @inkdropapp/math katex
+```
 
-    ```math
-    \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-    ```
+See [the package README](packages/math/README.md) for the API, the required stylesheet,
+and the peer dependencies.
 
-or
+## Development
 
-    $$
-    \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-    $$
+Requires [pnpm](https://pnpm.io/).
 
-It will be rendered as:
+```shell
+pnpm install
+pnpm build          # builds both packages, in dependency order
+pnpm dev            # watch mode
+pnpm typecheck
+pnpm lint
+pnpm format
+```
 
-![block example](https://github.com/inkdropapp/inkdrop-math/raw/master/docs/images/example-01.png)
+`lint` and `format` are configured once at the root ([oxlint](https://oxc.rs/) and
+[oxfmt](https://oxc.rs/)) and cover both packages.
 
-Inline example:
+To develop against a live Inkdrop, build and symlink the plugin directory:
 
-    Inline math: $\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}$
+```shell
+pnpm build
+ipm link packages/plugin
+```
 
-It will produce:
+### A couple of things worth knowing
 
-![inline example](https://github.com/inkdropapp/inkdrop-math/raw/master/docs/images/example-02.png)
+- The plugin **bundles** `@inkdropapp/math` rather than depending on it at runtime. The
+  published plugin has to be self-contained: ipm installs it from the registry and its
+  tarball excludes `node_modules`.
+- Both stylesheets are **generated** at build time from `node_modules/katex` and are
+  gitignored. They share one transform (`packages/math/scripts/katex-css.mjs`) and differ
+  only in where the fonts live: `packages/math/styles/` carries its own WOFF2 files and
+  points at them relatively, while `packages/plugin/styles/katex.css` uses absolute
+  `inkdrop://math/node_modules/katex/dist/fonts/…` URLs, because Inkdrop injects a plugin's
+  stylesheet as text — a relative `url()` there would resolve against the document.
+- That URL scheme is why `katex` stays an unbundled runtime **dependency** of the plugin:
+  ipm has to install it into the directory those URLs point at.
 
-### Equation numbers
+## Publishing
 
-You can use `{equation}` to have automatic equation numbers. For example:
+Two independent artifacts, and order matters — publish the renderer first if a plugin
+release depends on renderer changes, since the plugin bundles it at build time.
 
-    ```math
-    \begin{equation}
-    2(x+5)-7 = 3(x-2)
-    \end{equation}
-    ```
+```shell
+pnpm --filter @inkdropapp/math publish   # npm
+ipm publish packages/plugin              # Inkdrop plugin registry
+```
 
-    ```math
-    \begin{equation}
-    2x+10-7 = 3x-6
-    \end{equation}
-    ```
+## License
 
-    ```math
-    \begin{equation}
-    9 = x
-    \end{equation}
-    ```
-
-It will produce:
-
-![equation numbers example](https://github.com/inkdropapp/inkdrop-math/raw/master/docs/images/example-03.png)
-
-## Changelog
-
-See the [Releases](https://github.com/inkdropapp/inkdrop-math/releases) page for the changelog.
+MIT

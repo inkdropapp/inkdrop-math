@@ -1,5 +1,9 @@
 .DS_Store
 npm-debug.log
 node_modules
-styles/katex.css
 lib
+dist
+
+# Generated from node_modules/katex at build time (packages/math/scripts)
+packages/math/styles
+packages/plugin/styles/katex.css
