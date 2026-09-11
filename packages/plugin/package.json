@@ -14,14 +14,14 @@
     "prepublishOnly": "pnpm -w typecheck && pnpm -w lint && pnpm -w build"
   },
   "dependencies": {
-    "katex": "0.18.4"
+    "katex": "0.18.7"
   },
   "devDependencies": {
     "@inkdropapp/math": "workspace:*",
     "@inkdropapp/types": "^0.0.12",
-    "@types/node": "^26.2.0",
+    "@types/node": "^26.5.0",
     "@types/react": "^19.2.18",
-    "tsdown": "^0.22.14",
+    "tsdown": "^0.23.0",
     "typescript": "^7.0.2"
   },
   "engines": {
