@@ -1,6 +1,6 @@
 {
   "name": "@inkdropapp/math",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Host-agnostic React component for rendering KaTeX math, plus the scoped stylesheet it needs",
   "keywords": [
     "inkdrop",
