@@ -1,6 +1,6 @@
 {
   "name": "math",
-  "version": "1.7.3",
+  "version": "1.8.0",
   "description": "Add math syntax support to the editor and the preview",
   "keywords": [],
   "license": "MIT",
