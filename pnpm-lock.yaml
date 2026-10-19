@@ -21,8 +21,8 @@ importers:
         specifier: ^19.2.18
         version: 19.2.18
       katex:
-        specifier: 0.18.7
-        version: 0.18.7
+        specifier: 0.19.0
+        version: 0.19.0
       react:
         specifier: ^19.2.8
         version: 19.2.8
@@ -36,8 +36,8 @@ importers:
   packages/plugin:
     dependencies:
       katex:
-        specifier: 0.18.7
-        version: 0.18.7
+        specifier: 0.19.0
+        version: 0.19.0
     devDependencies:
       '@inkdropapp/math':
         specifier: workspace:*
@@ -768,8 +768,8 @@ packages:
   inkdrop-model@2.13.1:
     resolution: {integrity: sha512-uEKpLS24m69eLvzLrVkuHGohLzCaYyO7PbwuTmDDpoaqnI75z8r0ULcQr81tfxLpjpD7iCPXhu+5McTfujTzDA==}
 
-  katex@0.18.7:
-    resolution: {integrity: sha512-h+UCwkZ+4Jz8WQ7MLGfj7UVFrRCizGb912fwF4luGdYsC5paYG1vx+jy+KRcC/XkpjGva/P7nAWuxNnPzRvzHw==}
+  katex@0.19.0:
+    resolution: {integrity: sha512-v6Tznz3zJ7u3niRCoDTsumM2+HA2XXcCu+WAacCeHD2z3p9A9Ks987o5FzfTGBN0e8A0vjEgIDvLbICrXpdw/Q==}
     hasBin: true
 
   lru-cache@11.5.2:
@@ -1350,7 +1350,7 @@ snapshots:
 
   inkdrop-model@2.13.1: {}
 
-  katex@0.18.7:
+  katex@0.19.0:
     dependencies:
       commander: 15.0.0
 

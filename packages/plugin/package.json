@@ -14,7 +14,7 @@
     "prepublishOnly": "pnpm -w typecheck && pnpm -w lint && pnpm -w build"
   },
   "dependencies": {
-    "katex": "0.18.7"
+    "katex": "0.19.0"
   },
   "devDependencies": {
     "@inkdropapp/math": "workspace:*",
